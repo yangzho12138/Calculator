@@ -8,7 +8,7 @@ class Calculator extends Component {
                 <div className="calculator">
                     <div className="output">
                         <div className="last-output">123 *</div>
-                        <div className="current-output">96</div>
+                        <div className="current-output">9632334242421131</div>
                     </div>
                     <button>AC</button>
                     <button>Del</button>
