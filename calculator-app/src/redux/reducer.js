@@ -4,6 +4,14 @@ const evaluate = state => {
     let {lastOperand, currentOperand, operation} = state;
     let last = parseFloat(lastOperand);
     let current = parseFloat(currentOperand);
+    
+    let decimal_digit = 0;
+    if(lastOperand.split(".")[1] !== undefined && currentOperand.split(".")[1] !== undefined)
+        decimal_digit = Math.max(lastOperand.split(".")[1].length, currentOperand.split(".")[1].length);
+    else if(lastOperand.split(".")[1] !== undefined)
+        decimal_digit = lastOperand.split(".")[1].length;
+    else if(currentOperand.split(".")[1] !== undefined)
+        decimal_digit = currentOperand.split(".")[1].length;
 
     let res = "";
     switch(operation){
@@ -19,9 +27,14 @@ const evaluate = state => {
         case "/" :
             res = last / current;
             break;
+        case "%" :
+            res = last % current;
     }
 
+    res = res.toFixed(decimal_digit);
+
     return res.toString();
+
 }
 
 const reducer = (state = {
@@ -119,6 +132,14 @@ const reducer = (state = {
                 operation: "",
                 currentOperand: evaluate(state),
                 overwrite: true,
+            }
+        
+        case ACTIONS.REVERSE_SIGN:
+            if(state.currentOperand === '0')
+                return state;
+            return {
+                ...state,
+                currentOperand: `-${state.currentOperand}`,
             }
         
         default:

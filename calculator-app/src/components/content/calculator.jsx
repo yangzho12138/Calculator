@@ -31,7 +31,7 @@ class Calculator extends Component {
                     </div>
                     <button onClick={this.props.clear}>AC</button>
                     <button onClick={this.props.delete}>Del</button>
-                    <button>x^2</button>
+                    <OperationButton operation={"%"} />
                     <OperationButton operation={"/"} />
                     <DigitButton digit={"7"}/>
                     <DigitButton digit={"8"}/>
@@ -45,7 +45,7 @@ class Calculator extends Component {
                     <DigitButton digit={"2"}/>
                     <DigitButton digit={"3"}/>
                     <OperationButton operation={"+"} />
-                    <button>+/-</button>
+                    <button onClick={this.props.reverse_sign}>+/-</button>
                     <DigitButton digit={"0"}/>
                     <DigitButton digit={"."}/>
                     <button onClick={this.props.evaluate}>=</button>
@@ -63,7 +63,7 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-/* There is only one delete key, so components are not set up separately */
+/* There is only one delete/clear... key, so components are not set up separately */
 const mapDispatchProps = {
     delete:() => {
         return {
@@ -78,6 +78,11 @@ const mapDispatchProps = {
     evaluate: () =>{
         return {
             type: ACTIONS.EVALUATE,
+        }
+    },
+    reverse_sign: () =>{
+        return {
+            type: ACTIONS.REVERSE_SIGN,
         }
     }
 }
