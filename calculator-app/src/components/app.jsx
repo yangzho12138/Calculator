@@ -15,13 +15,13 @@ class App extends Component {
                 <NavBar />
                 <div className='container'>
                     <Routes>
-                        <Route path='/' element={<Home />}></Route>
-                        <Route path='/home' element={<Home />}></Route>
-                        <Route path='/calculator' element={<Calculator />}></Route>
-                        <Route path='/login' element={<Login />}></Route>
-                        <Route path='/register' element={<Register />}></Route>
-                        <Route path='/404' element={<NotFound />}></Route>
-                        <Route path='*' element={<Navigate replace to='/404' />}></Route>
+                        <Route path='/calculator' element={<Home />}></Route>
+                        <Route path='/calculator/home' element={<Home />}></Route>
+                        <Route path='/calculator/calculator' element={<Calculator />}></Route>
+                        <Route path='/calculator/login' element={<Login />}></Route>
+                        <Route path='/calculator/register' element={<Register />}></Route>
+                        <Route path='/calculator/404' element={<NotFound />}></Route>
+                        <Route path='/calculator/*' element={<Navigate replace to='/calculator/404' />}></Route>
                     </Routes>
                 </div>
             </React.Fragment>

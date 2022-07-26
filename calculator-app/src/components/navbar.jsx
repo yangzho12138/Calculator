@@ -8,25 +8,25 @@ class NavBar extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" to="/">Online Calculator</Link>
+                        <Link className="navbar-brand" to="/calculator">Online Calculator</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                          </button>
                         <div className="collapse navbar-collapse" id="navbarText">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link className="nav-link active" to="/home">Home</Link>
+                                    <Link className="nav-link active" to="/calculator/home">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/calculator">Calculator</Link>
+                                    <Link className="nav-link" to="/calculator/calculator">Calculator</Link>
                                 </li>
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <Link className="nav-link active" to="/login">Login</Link>
+                                    <Link className="nav-link active" to="/calculator/login">Login</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/register">Register</Link>
+                                    <Link className="nav-link" to="/calculator/register">Register</Link>
                                 </li>
                             </ul>
                         </div>
