@@ -42,11 +42,11 @@ class Login extends Component {
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">UserName</label>
                         {/* onChange: setState when there is an input*/}
-                        <input onChange={e => {this.setState({username: e.target.value})}} type="username" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input onChange={e => {this.setState({username: e.target.value})}} type="username" className="form-control" id="username" />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Password</label>
-                        <input onChange={e => {this.setState({password: e.target.value})}} type="password" className="form-control" id="exampleInputPassword1" />
+                        <input onChange={e => {this.setState({password: e.target.value})}} type="password" className="form-control" id="password" />
                     </div>
                     <div style = {{height: "2rem", color: "red"}}>
                         {this.state.error_message}
